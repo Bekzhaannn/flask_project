@@ -5,6 +5,15 @@ import os
 
 app = Flask(__name__)
 
+def get_data():
+    with open('data.py', 'r', encoding="utf-8") as f:
+        data = f.read()
+    return data
+
+def write_data(data):
+    with open('data.py', 'w', encoding="utf-8") as f:
+        f.write(data)
+
 @app.route('/')
 def index():
     return render_template('index.html', data=data)
@@ -27,6 +36,7 @@ def add_card():
     image.save(file_path)
 
     data.append(card)
+    write_data(f"data = {data}")
     return redirect('/admin')
 
 @app.route('/delete_card', methods=['POST'])

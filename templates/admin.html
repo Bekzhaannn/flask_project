@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+  <!-- сделать красивым и нормально видимым -->
+  <!-- настрой инпуты, чтобы там где число, нельзя было писать текст -->
     <div class="add_card">
       <form action="/add_card" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="name">
@@ -22,6 +24,7 @@
       <div class="cards">
         {% for item in data %}
         <div class="card">
+          <!-- пофиксить и сделать красиво - чтобы была только иконка удалить -->
           <form class="delete" action="/delete_card" method="POST">
             <input type="submit" value="Добавить">
               <img src="../static/close.png" class="delete" />

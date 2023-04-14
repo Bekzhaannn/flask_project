@@ -1,16 +1,1 @@
-data = [
-    {
-      "id":1,
-      "name": "Ronaldo",
-      "age": 38,
-      "overall_rating": 90,
-      "height" : 185,
-    },
-    {
-      "id":2,
-      "name": "Messi",
-      "age": 35,
-      "overall_rating": 90,
-      "height" : 170,
-    },
-]
+data = [{'id': 1, 'name': 'Ronaldo', 'age': 38, 'overall_rating': 90, 'height': 185}, {'id': 2, 'name': 'Messi', 'age': 35, 'overall_rating': 90, 'height': 170}, {'id': '01150', 'name': 'fawefwaf', 'age': '12', 'overall_rating': 'awfawfaw', 'height': ''}, {'id': '10940', 'name': 'awfwaf', 'age': 'awfawf', 'overall_rating': 'awfawf', 'height': 'awfawfawf'}]
