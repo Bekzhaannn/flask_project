@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from data import data
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -15,13 +16,18 @@ def admin():
 @app.route('/add_card', methods=['POST'])
 def add_card():
     card = {}
-    card['id'] = datetime.datetime.now()
+    card['id'] = str(datetime.datetime.now())[-6:-1]
     card['name'] = request.form['name']
     card['age'] = request.form['age']
     card['overall_rating'] = request.form['overall_rating']
     card['height'] = request.form['height']
+    image = request.files['image']
+    filename = f"{card['id']}.jpg"
+    file_path = os.path.join("static", "photo", filename).replace("\\", "/")
+    image.save(file_path)
+
     data.append(card)
-    return redirect('/')
+    return redirect('/admin')
 
 @app.route('/delete_card', methods=['POST'])
 def delete_card():

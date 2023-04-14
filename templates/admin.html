@@ -9,13 +9,15 @@
 </head>
 <body>
     <div class="add_card">
-      <form action="/add_card" method="POST">
+      <form action="/add_card" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="name">
         <input type="text" name="age" placeholder="age">
         <input type="text" name="overall_rating" placeholder="overall_rating">
         <input type="text" name="height" placeholder="height">
+        <input type="file" name="image" placeholder="image" accept=".jpg, .png" >
         <input type="submit" value="Добавить">
       </form>
+    </div>
 
       <div class="cards">
         {% for item in data %}
@@ -26,7 +28,7 @@
             </input>
             <input type="hidden" name="id" value="{{ item.id }}" />
           </form>
-          <img class=image src="../static/cards/{{item.id}}.jpg" />
+          <img class=image src="../static/photo/{{item.id}}.jpg" />
           <h5> Айди: {{ item.id }}</h5>
           <h1>{{ item.name }}</h1>
           <p>Возраст: {{ item.age }}</p>
@@ -35,7 +37,7 @@
         </div>
         {% endfor %}
       </div>
-    </div>
+
   </body>
 </html>
 
