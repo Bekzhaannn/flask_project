@@ -8,12 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-  <!-- сделать красивым и нормально видимым -->
+
   <!-- настрой инпуты, чтобы там где число, нельзя было писать текст -->
-    <div class="add_card">
-      <form action="/add_card" method="POST" enctype="multipart/form-data">
+    <div class=add_card_с>
+      <form class=add_card action="/add_card" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="name">
-        <input type="text" name="age" placeholder="age">
+        <input type="range" name="age" placeholder="age">
         <input type="text" name="overall_rating" placeholder="overall_rating">
         <input type="text" name="height" placeholder="height">
         <input type="file" name="image" placeholder="image" accept=".jpg, .png" >

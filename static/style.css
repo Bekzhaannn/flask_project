@@ -16,7 +16,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .card {
@@ -55,17 +54,18 @@ body {
   object-fit: cover;
 }
 
-.add_card{
+.add_card { 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 200px;
+  width: 300px;
   height: 130px;
   justify-content: center;
   background-color: #000000;
   border-radius: 10px;
   border: 2px solid #f7f7f7;
+  margin: 0 auto;
 }
 
 .delete {
@@ -78,9 +78,8 @@ body {
   padding: 10px;
   border: none;
   cursor: pointer;
+  
 }
 
-.card_image {
-  border-radius: 10px;
-  width: 290px;
-}
+
+
