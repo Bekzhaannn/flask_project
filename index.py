@@ -25,7 +25,7 @@ def admin():
 @app.route('/add_card', methods=['POST'])
 def add_card():
     card = {}
-    card ['id'] = str(datetime.datetime.now())[-6:-1]
+    card['id'] = str(datetime.datetime.now())[-6:-1]
     card['name'] = request.form['name']
     card['age'] = request.form['age']
     card['overall_rating'] = request.form['overall_rating']

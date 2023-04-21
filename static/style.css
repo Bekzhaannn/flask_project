@@ -81,5 +81,33 @@ body {
   
 }
 
+.age {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.min {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.max {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  color: white;
+}
+
+input {
+  width: 200px;
+}
+
 
 
