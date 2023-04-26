@@ -110,4 +110,20 @@ input {
 }
 
 
+.blue {
+  background-color: #0d00ff;
+  color: #f7f7f7;
+  width: 50vw;
+  float: left;
+  height: 100vh;
+}
+
+.red {
+  background-color: #ff0000;
+  color: #f7f7f7;
+  width: 50vw;
+  float: right;
+  height: 100vh;
+}
+
 

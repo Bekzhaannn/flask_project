@@ -48,5 +48,11 @@ def delete_card():
             data.remove(card)
     return redirect('/admin')
 
+#игра - на отдельном роуте
+
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
