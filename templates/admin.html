@@ -19,8 +19,18 @@
           <div class="min">18</div>
           <div class="max">50</div>
         </div>
-        <input type="text" name="overall_rating" placeholder="overall_rating">
-        <input type="text" name="height" placeholder="height">
+        <div class="overall_rating">
+          <label for="overall_rating">Общий рейтинг</label>
+          <input type="range" min="50" max="150" name="overall_rating" placholder="overall_rating">
+          <div class="min">50</div>
+          <div class="max">150</div>
+        </div>
+        <div class="height">
+          <label for="height">Рост</label>
+          <input type="range" min="150" max="220" name="age" placholder="height">
+          <div class="min">150</div>
+          <div class="max">220</div>
+        </div>
         <input type="file" name="image" placeholder="image" accept=".jpg, .png" >
         <input type="submit" value="Добавить">
       </form>
@@ -31,8 +41,7 @@
         <div class="card">
           <!-- пофиксить и сделать красиво - чтобы была только иконка удалить -->
           <form class="delete" action="/delete_card" method="POST">
-            <input type="submit" value="Добавить">
-              <img src="../static/close.png" class="delete" />
+            <input class="del" type="submit" value="X">
             </input>
             <input type="hidden" name="id" value="{{ item.id }}" />
           </form>
