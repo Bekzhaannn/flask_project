@@ -10,17 +10,21 @@
   <div class="cards">
     {% for item in data %}
       <div class="card">
-          <img class=img src="../static/photo/{{ item.id }}.jpg" alt="">
+          <img class="image_footbaler" src="../static/photo/{{ item.id }}.jpg" alt="">
           <h5> Айди: {{ item.id }}</h5>
           <h1>{{ item.name }}</h1>
           <p>Возраст: {{ item.age }}</p>
           <p>Общий рейтинг: {{ item.overall_rating }}</p>
           <p>Рост: {{ item.height }} см</p>
+          <form class="Join_button" action="/Join_button" method="POST">
+            <input class="Join_button_left" type="submit" value="Blue">
+            <input class=" Join_button_right" type="submit" value="Red">
+          </form>
+          
           <!-- сила: 10 -->
           <!-- скорость: 10 -->
           <!-- удача: 10 -->
-          добавить игрока в синюю команду - 11 человек
-          добавить в игроку в красную команду - 11 человек
+      
       </div>
     {% endfor %}
 </body>
