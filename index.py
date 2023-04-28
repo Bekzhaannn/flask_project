@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from data import data
+from commands import red, blue
 import datetime
 import os
 
@@ -48,11 +49,27 @@ def delete_card():
             data.remove(card)
     return redirect('/admin')
 
+@app.route('/join_button', methods=['POST'])
+def join_button():
+    id = request.form['id']
+    if request.form['command'] == 'Blue':
+        if id in red:
+            red.remove(id)
+        blue.add(id)
+    elif request.form['command'] == 'Red':
+        if id in blue:
+            blue.remove(id)
+        red.add(id)
+
+    print(red, "red")
+    print(blue, "blue")
+    return redirect('/')
+
 #игра - на отдельном роуте
 
 @app.route('/game')
 def game():
-    return render_template('game.html')
+    return render_template('game.html', items=[data, red, blue])
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,2 @@
+red = set()
+blue = set()

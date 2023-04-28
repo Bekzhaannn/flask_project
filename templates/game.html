@@ -8,7 +8,26 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="blue"><input class="blue_button" type="submit" value="Синие"></div>
-    <div class="red"><input class="red_button" type="submit" value="Красные"></div>
+    {% for player in red %} {% for card in data %} {% if player == card.id %}
+    <div class="card">
+      <img class="image_footbaler" src="../static/photo/{{ card.id }}.jpg" alt="" />
+      <h5>Айди: {{ card.id }}</h5>
+      <h1>{{ card.name }}</h1>
+      <p>Возраст: {{ card.age }}</p>
+      <p>Общий рейтинг: {{ card.overall_rating }}</p>
+      <p>Рост: {{ card.height }} см</p>
+      <form class="Join_button" action="/join_button" method="POST">
+        <input class="Join_button_left" name="command" type="submit" value="Blue" />
+        <input class="Join_button_right" name="command" type="submit" value="Red" />
+        <input type="hidden" name="id" value="{{ card.id }}" />
+      </form>
+    </div>
+    {% else %}
+    <div>
+      <h1>Пусто</h1>
+    </div>
+    {% endif %} {% endfor %} {% endfor %}
+    <!-- <div class="blue"><input class="blue_button" type="submit" value="Синие" /></div>
+    <div class="red"><input class="red_button" type="submit" value="Красные" /></div> -->
   </body>
 </html>

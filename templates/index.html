@@ -16,9 +16,10 @@
           <p>Возраст: {{ item.age }}</p>
           <p>Общий рейтинг: {{ item.overall_rating }}</p>
           <p>Рост: {{ item.height }} см</p>
-          <form class="Join_button" action="/Join_button" method="POST">
-            <input class="Join_button_left" type="submit" value="Blue">
-            <input class=" Join_button_right" type="submit" value="Red">
+          <form class="Join_button" action="/join_button" method="POST">
+            <input class="Join_button_left" name="command" type="submit" value="Blue">
+            <input class=" Join_button_right" name="command" type="submit" value="Red">
+            <input type="hidden" name="id" value="{{ item.id }}" />
           </form>
           
           <!-- сила: 10 -->
