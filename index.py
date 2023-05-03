@@ -52,24 +52,39 @@ def delete_card():
 @app.route('/join_button', methods=['POST'])
 def join_button():
     id = request.form['id']
-    if request.form['command'] == 'Blue':
-        if id in red:
-            red.remove(id)
-        blue.add(id)
-    elif request.form['command'] == 'Red':
-        if id in blue:
-            blue.remove(id)
-        red.add(id)
+    for card in data:
+        if str(card['id']) == str(id):
+            if request.form['command'] == 'Blue':
+                flag = False
+                for blue_item in blue:
+                    if str(blue_item['id']) == str(id):
+                        blue.remove(blue_item)
+                for red_item in red:
+                    print(red_item)
+                    if str(red_item['id']) == str(id):
+                        red.remove(red_item)
+                        flag = True
+                if len(red) == 0 or len(blue) == 0 and flag:
+                    blue.append(card)
+            elif request.form['command'] == 'Red':
+                flag = False
+                for red_item in red:
+                    if str(red_item['id']) == str(id):
+                        red.remove(red_item)
+                for blue_item in blue:
+                    if str(blue_item['id']) == str(id):
+                        blue.remove(blue_item)
+                        flag = True
+                if len(blue) == 0 or len(red) == 0 and flag:
+                    red.append(card)
 
-    print(red, "red")
-    print(blue, "blue")
+    print(red)
+    print(blue)
     return redirect('/')
-
-#игра - на отдельном роуте
 
 @app.route('/game')
 def game():
-    return render_template('game.html', items=[data, red, blue])
+    return render_template('game.html', red=red, blue=blue)
 
 if __name__ == '__main__':
     app.run(debug=True)

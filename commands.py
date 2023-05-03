@@ -1,2 +1,2 @@
-red = set()
-blue = set()
+red = []
+blue = []
