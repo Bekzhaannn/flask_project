@@ -8,19 +8,21 @@
     <title>Document</title>
   </head>
   <body>
-    {% for card in blue %} Синие {{card}} {% endfor %} {% for card in red %} Красные {{card}} {% endfor %}
+    <!-- {% for card in blue %} Синие {{card}} {% endfor %} {% for card in red %} Красные {{card}} {% endfor %} -->
 
     <div class="blue">
       <input class="blue_button" type="submit" value="Синие" />
       {% for card in blue %}
-      img class="image_footbaler" src="../static/photo/{{ card.id }}.jpg" alt="" />
+      <div class="card card_game">
+        <img class="image_footbaler" src="../static/photo/{{ card.id }}.jpg" alt="" />
         <h5>Айди: {{ card.id }}</h5>
         <h1>{{ card.name }}</h1>
         <p>Возраст: {{ card.age }}</p>
         <p>Общий рейтинг: {{ card.overall_rating }}</p>
         <p>Рост: {{ card.height }} см</p>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
     <div class="red">
       <input class="red_button" type="submit" value="Красные" />
       {% for card in red %}
