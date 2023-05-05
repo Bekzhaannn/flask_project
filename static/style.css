@@ -195,3 +195,14 @@ input {
   height: 390px;
   border: 1px solid #f7f7f7;
 }
+
+.card_game {
+  transform: scale(0.5);
+}
+
+.card_game:hover {
+  transform: perspective(1000px) rotate(50deg) scale(0.55);
+  /* transform: scale(0.5);
+  transform: translateZ(10px); */
+  transition: all 0.2s ease-in-out;
+}
