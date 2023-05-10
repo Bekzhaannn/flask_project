@@ -134,28 +134,31 @@ input {
 }
 
 .blue {
-  background-color: #0d00ff;
-  color: #f7f7f7;
+  background-color: rgb(0, 60, 255);
   width: 50vw;
-  float: left;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  position: fixed;
-  position: static;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  min-height: 3000px;
 }
 
-.red {
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  /* max-height: 400px; */
+}
 
+
+.red {
   background-color: red;
   width: 50vw;
   position: absolute;
   right: 0;
-  height: 100vh;
+  top: 0;
+  height: 100%;
+  min-height: 3000px;
 }
 
 .blue_button{
@@ -206,20 +209,18 @@ input {
 
 .card_game {
   transform: scale(0.5);
-  padding-right: 0;
+  transform-origin: center center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 10px;
-  margin: 0;
-  position: fixed;
-  position: static;
+
 }
 
 .card_game:hover {
-  transform: perspective(1000px) translate(50px, -50px) scale(0.55);
+  transform: perspective(1000px) translateZ(10px) scale(0.55);
   /* transform: scale(0.5);
   transform: translateZ(10px); */
   transition: all 0.2s ease-in-out;
 }
+
 
